@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A shopping cart functionality using arrays</title>
+</head>
+<style>
+    li {
+        width: 30%;
+    }
+    li img{
+        width: 100%;
+    }
+</style>
+<script>
+    var items = [
+        ['images/img1.jpg', 29.99, 'Product1'],
+        ['images/img2.jpg', 19.99, 'Product2'],
+        ['images/img3.jpg', 39.99, 'Product3'],
+        ['images/img4.jpg', 19.99, 'Product4']
+  ];
+
+    function run() {
+
+        var main = document.getElementById('products')
+
+        // all elements to be added
+
+        for(var i=0; i<items.length; i++) {
+
+        var ele= document.createElement('li')
+        var pic = document.createElement('img')
+        var price = document.createElement('h1')
+        var desc= document.createElement('h2')
+        var add = document.createElement('buttons')
+        var typebox= document.createElement('input')
+
+        // push all elements into html
+
+        main.appendChild(ele);
+        ele.appendChild(pic);
+        ele.appendChild(price);
+        ele.appendChild(desc);
+        ele.appendChild(add);
+        ele.appendChild(typebox);
+
+        // edit push info from array
+
+        pic.src= items[i][0];
+        price.innerHTML = '$' + items[i][1];
+        desc.innerHTML = items[i][2];
+        add.innerHTML =  'add';
+        typebox.type= 'number';
+    }
+    }
+</script>
+<body onload="run()">
+     <ul id="products">
+
+     </ul>
+    
+</body>
+</html>

@@ -1,3 +1,4 @@
+// Task class definition
 class Task {
     constructor(id, name, description, dueDate) {
         this.id = id;
@@ -11,6 +12,7 @@ class Task {
     }
 }
 
+// Scheduler class definition
 class Scheduler {
     constructor() {
         this.tasks = new Map();
@@ -62,7 +64,7 @@ class Scheduler {
     }
 
     getSelectedTaskId() {
-        const selectedElement = document.querySelector('.task-list li.selected');
+        const selectedElement = document.querySelector('#taskList li.selected');
         return selectedElement ? parseInt(selectedElement.dataset.id) : null;
     }
 
@@ -84,7 +86,7 @@ class Scheduler {
     }
 
     selectTask(element) {
-        const selected = document.querySelector('.task-list li.selected');
+        const selected = document.querySelector('#taskList li.selected');
         if (selected) selected.classList.remove('selected');
         element.classList.add('selected');
     }
@@ -92,6 +94,4 @@ class Scheduler {
 
 // Initialize the scheduler application
 window.onload = () => new Scheduler();
-
-
 
